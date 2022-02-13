@@ -1,0 +1,1 @@
+const worker=new Worker("worker.js"),htmlCanvas=document.getElementById("canvas"),res=htmlCanvas.width=htmlCanvas.height=screen.width,offscreen=htmlCanvas.transferControlToOffscreen();function startup(){worker.postMessage({msg:"startup",canvas:offscreen,res:res},[offscreen])}function fill(){worker.postMessage({msg:"fill"})}function lines(){worker.postMessage({msg:"lines"})}
