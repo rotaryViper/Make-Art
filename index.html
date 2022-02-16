@@ -7,11 +7,11 @@ Enjoy the "random" art pieces
     <head>
         <title>Make Art!</title>
         <link href=style.css rel=stylesheet>
-        <script src=main.js async></script>
+        <script src=main.js async onload="copyToOnScreen(fill()),copyToOnScreen(lines())"></script>
         <meta name=viewport content="width=device-width,initial-scale=1.0">
     </head>
 
-    <body onload=startup()>
+    <body>
         <button type=button onclick=copyToOnScreen(fill())>Fill canvas</button>
         <button type=button onclick=copyToOnScreen(lines())>Paint lines</button>
         <canvas id=onScreen></canvas>
