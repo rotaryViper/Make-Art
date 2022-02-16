@@ -1,6 +1,8 @@
+"use strict"
 var onScreen = document.getElementById('onScreen');
 var res = onScreen.width = onScreen.height = screen.width;
 var onScreenContext = onScreen.getContext('2d', {alpha: false, desynchronized: true});
+var offScreenCanvas, angle, scale, rotate;
 
 function createOffscreenCanvas() {
     var canvas = document.createElement('canvas');
@@ -10,7 +12,7 @@ function createOffscreenCanvas() {
 
 function fill(){
     offScreenCanvas = createOffscreenCanvas();
-    var ctx = offScreenCanvas.getContext("2d", {alpha: false, desynchronized: true});
+    let ctx = offScreenCanvas.getContext("2d", {alpha: false, desynchronized: true});
     ctx.fillStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
     ctx.fillRect(0, 0, res, res);
     return offScreenCanvas;
@@ -18,7 +20,7 @@ function fill(){
 
 function lines(){
     offScreenCanvas = createOffscreenCanvas();
-    var ctx = offScreenCanvas.getContext("2d", {desynchronized: true});
+    let ctx = offScreenCanvas.getContext("2d", {desynchronized: true});
     for (let i = 0; i!=300; i++){
 
         ctx.strokeStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
